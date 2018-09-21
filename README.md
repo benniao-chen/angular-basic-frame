@@ -11,6 +11,7 @@ Base in the newest angular.  Do a simple frame show.
 ## Start
 1. npm start
 2. url: localhost: 4200
+3. ng g m modules/share
 
 ## add some useful package
 
