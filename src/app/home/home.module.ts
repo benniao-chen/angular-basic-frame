@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ShareModule } from '../share/share.module';
 import { routing } from './home.route';
 import { HomeComponent } from './home.component';
 import { MenuComponent } from './menu/menu.component';
@@ -10,7 +11,8 @@ import { MenuTwoComponent } from './menu-two/menu-two.component';
 @NgModule({
   imports: [
     CommonModule,
-    routing
+    ShareModule,
+    routing,
   ],
   declarations: [
     HomeComponent,
