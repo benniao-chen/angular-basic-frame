@@ -1,9 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { routing } from './home.route';
-import { HomeIndexComponent } from './home-index/home-index.component';
-import { HeaderComponent } from './home-index/header/header.component';
-import { MenuComponent } from './home-index/menu/menu.component';
+import { HomeComponent } from './home.component';
+import { MenuComponent } from './menu/menu.component';
+import { HeaderComponent } from './header/header.component';
+import { MenuOneComponent } from './menu-one/menu-one.component';
+import { MenuTwoComponent } from './menu-two/menu-two.component';
 
 @NgModule({
   imports: [
@@ -11,9 +13,11 @@ import { MenuComponent } from './home-index/menu/menu.component';
     routing
   ],
   declarations: [
-    HomeIndexComponent,
-    HeaderComponent,
+    HomeComponent,
     MenuComponent,
+    HeaderComponent,
+    MenuOneComponent,
+    MenuTwoComponent,
   ]
 })
 export class HomeModule { }

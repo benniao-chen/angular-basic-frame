@@ -3,9 +3,10 @@ import { Routes, RouterModule, NoPreloading, PreloadAllModules, PreloadingStrate
 
 
 export const Routers: Routes = [
-    {path: "", redirectTo: "Home", pathMatch: "prefix"},
+    {path: "", redirectTo: "Login", pathMatch: "full"},
     {path: "Home", loadChildren: "./home/home.module#HomeModule"},
     {path: "Login", loadChildren: "./login/login.module#LoginModule"},
+    {path: "**", redirectTo: "Login"},
 ];
 
 export const Routing = RouterModule.forRoot(Routers, {

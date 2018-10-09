@@ -1,9 +1,12 @@
 import { Routes, RouterModule } from '@angular/router';
-import { HomeIndexComponent } from './home-index/home-index.component';
+import { HomeComponent } from './home.component';
+import { MenuOneComponent } from './menu-one/menu-one.component';
+import { MenuTwoComponent } from './menu-two/menu-two.component';
 
 export const routes: Routes = [
-    {path: "", component: HomeIndexComponent, children: [
-        // {path: '', loadChildren: ''},
+    {path: "", component: HomeComponent, children: [
+        {path: 'menuOne', component: MenuOneComponent},
+        {path: 'menuTwo', component: MenuTwoComponent},
     ]},
 ]
 

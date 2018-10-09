@@ -1,8 +1,8 @@
 import { Routes, RouterModule } from '@angular/router';
-import { LoginIndexComponent } from './login-index/login-index.component';
+import { LoginComponent } from './login.component';
 
 export const routes: Routes = [
-    {path: "", component: LoginIndexComponent, children: [
+    {path: "", component: LoginComponent, children: [
         // {path: '', loadChildren: ''},
     ]},
 ]
