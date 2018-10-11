@@ -1,0 +1,32 @@
+@import '../../../../global/sass/common';
+
+.benniao-table {
+    line-height: 40px;
+    color: #ffffff;
+    font-size: px2rem(14);
+
+    .table-header {
+        background-color: #006564;
+        .header-title {    
+            border-right: solid 1px #ffffff;    
+        }
+    }
+
+    .table-content {
+        background-color: #fff;
+        color: #4c4c4c;
+        .table-row {
+            border: solid 1px #d7d7d7;  
+            border-top: none;
+            div {
+                border-right: solid 1px #d7d7d7;  
+                &.no-right-border {
+                    border-right: none;
+                }
+            }
+            &.odd {
+                background-color: #ebf2f0;
+            }
+        }
+    }
+}

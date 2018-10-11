@@ -1,1 +1,14 @@
 <router-outlet></router-outlet>
+<div class="container field-group cx-inputfield">
+    <label for="username" class="fallback-label field-label">Username</label>
+    <input id="username" [benniaoAutoFocus]='focus1' class="field-input" placeholder="UserName" [(ngModel)]='userName'/>
+
+    <label for="password" class="fallback-label field-label">Password</label>
+    <input id="password" [benniaoAutoFocus]='focus2' class="field-input" placeholder="Password" [(ngModel)]='password'/>
+</div>
+
+<button (click)='changeFocus()'>changeFocus</button>
+{{curItemNumber}}
+
+<benniao-cx-agent-table [tableConfig]='tableConfig' [tableData]='tableData' (tableRowClick)='rowClick($event)'></benniao-cx-agent-table>
+

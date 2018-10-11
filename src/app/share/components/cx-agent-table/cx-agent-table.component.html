@@ -1,0 +1,20 @@
+<div class="benniao-table container">
+	<div class="table-header row">
+		<ng-container *ngFor='let header of tableConfig'>
+			<div class="header-title {{header.className}}">
+				{{header.headerName}}
+			</div>
+		</ng-container>
+	</div>
+	<div class="table-content">
+		<ng-container *ngFor='let data of tableData; odd as odd'>
+			<div class="table-row row" [class.odd]='odd' (click)='rowClick(data)'>
+				<ng-container *ngFor='let header of tableConfig; last as l'>
+					<div [ngClass]="header.className" [class.no-right-border]='l'>
+						{{data[header.field]}}
+					</div>
+				</ng-container>
+			</div>
+		</ng-container>
+	</div>
+</div>

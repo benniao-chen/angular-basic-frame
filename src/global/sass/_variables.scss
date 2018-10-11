@@ -1,0 +1,104 @@
+%is-visually-hidden { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0, 0, 0, 0); border: 0; }
+
+$base-font-size-value: 16;
+$base-font-size: $base-font-size-value + px;
+$base-font-family: 'Aktiv Grotesk W01 Regular';
+// $rest-font-family: Arial, Helvetica, 'SimHei', 'Microsoft JhengHei', 'Heiti TC', 'STHeiti', 'Ms PGothic', 'PMingLiu';
+$rest-font-family: 'sans-serif';
+
+$side-menu-width: 400;
+$side-menu-width-sm: 350;
+$side-menu-width-s: 250;
+
+//
+// breakpoints/ grid collections
+// --------------------------------------------------
+											// use col-xs at the beginning to build mobile view
+$viewport-sm: 600px;	// use col-sm for modification when screen-width >= $viewport-sm
+$viewport-md: 1008px;	// use col-md for modification when screen-width >= $viewport-md
+$viewport-lg: 1281px;	// use col-lg for modification when screen-width >= $viewport-lg
+
+$grid-gutter-width: 16px;
+//
+// Color collections
+// --------------------------------------------------
+
+// step number gradient
+$cx-step-number-green-top: #00646a;
+$cx-step-number-green-bottom: #53a39f;
+
+// gradient blue
+$cx-gradient-blue-base: #202f42;
+$cx-gradient-blue-light: #3c5776;
+
+$cx-gradient-darker-blue-base: #1f2e42;
+$cx-gradient-darker-blue-light: #2c415d;
+$cx-darker-blue-border: #202f42;
+
+
+// button
+$cx-button-green-top: #0f748f;
+$cx-button-green-bottom: #3391a2;
+$cx-button-hover-green-top: #3291a2;
+$cx-button-hover-green-bottom: #0d6b7c;
+
+$cx-button-red-top: #a62128;
+$cx-button-red-bottom: #cb464d;
+$cx-button-hover-red-top: #ca464d;
+$cx-button-hover-red-bottom: #a52027;
+
+$cx-button-disabled-top: #c1c1c1;
+$cx-button-disabled-bottom: #dbdbdb;
+
+$cx-text-shadow-primary-button: #0e748f;
+
+// Primary
+$cx-green: #006564;
+$cx-green-sub: #e5efef;
+$cx-green-sub-dark: #d3dfde;
+$cx-white: #fff;
+$cx-white-grey: #f9faf9;
+$cx-black: #000;
+$cx-red: #c2262e;
+$cx-blue-grey: #7da5b7;
+$cx-blue-grey-sub: #edf3f5;
+$cx-blue-grey-sub-dark: #dbe2e4;
+$cx-blue-navy: #466792;
+$cx-blue-navy-sub: #e5eaf0;
+$cx-blue-navy-sub-dark: #d3dadf;
+$cx-red-maroon: #a26673;
+$cx-red-maroon-sub: #f2e9ec;
+$cx-red-maroon-sub-dark: #e0d9da;
+
+// Secondary
+$cx-green-secondary: #367d79;
+$cx-green-warm: #498169;
+$cx-gold: #8e8573;
+$cx-champagne: #dcd3bc;
+$cx-clay: #fcf6ea;
+$cx-blue-link: #0f748f;
+
+// Interface colours
+$cx-error: #d11f00;
+$cx-alert: #fed700;
+
+// Classes
+$cx-economy: #006564; // Y
+// $cx-premium-economy: #4e86a0; // old
+$cx-premium-economy: #487c94; // W
+$cx-business: #002e6c; // C
+$cx-first: #832c40; // F
+
+
+// 5 shades of grey - from darkest to lightest
+$cx-grey-dark: #4c4c4c;
+$cx-grey-medium: #767676;
+$cx-grey-baidu: #9d9e9d;
+$cx-grey-warm: #c6c2c1;
+$cx-grey-cool: #d7d7d7;
+$cx-grey-silver: #e5e5e5;
+$cx-grey-light: #ebedec;
+$cx-grey-platinum: #f9f9f9;
+
+// table colors
+$cx-table-tr: #ecf2f0;

@@ -1,0 +1,86 @@
+@import 'cathay-pacific';
+@import 'themes';
+@import 'variables';
+
+@mixin button-primary-hover {
+
+  @include themes(cathaypacific) {
+    // background: linear-gradient(to top, rgba(50, 145, 162, 1) 0%, rgba(13, 107, 124, 1) 100%);
+    background: linear-gradient(to top, $cx-button-hover-green-top 0%, $cx-button-hover-green-bottom 100%);
+    text-decoration: underline;
+  }
+
+}
+
+@mixin button-primary {
+  @include border-radius(2px);
+  @include themes(cathaypacific) {
+    background-color: $cx-blue-link;
+    // background: linear-gradient(to top, rgba(15, 116, 143, 1) 0%, rgba(51, 145, 162, 1) 100%);
+    background: linear-gradient(to top, $cx-button-green-top 0%, $cx-button-green-bottom 100%);
+    box-shadow: 0 1px 0 0 $cx-grey-warm;
+    color: $cx-white;
+    text-shadow: 1px 1px 1px $cx-text-shadow-primary-button;
+  }
+  position: relative;
+  border: 1px solid transparent; text-align: center;
+
+  &.theme-red { background: linear-gradient(to top, $cx-button-red-top 0, $cx-button-red-bottom 100%); text-shadow: none; }
+
+  &:focus,
+  &:hover {
+    @include button-primary-hover;
+
+    &.theme-red { background: linear-gradient(to top, $cx-button-hover-red-top 0, $cx-button-hover-red-bottom 100%); }
+  }
+
+  &:disabled, &.disabled {
+    cursor: default;
+    background-color: $cx-grey-cool;
+    background: linear-gradient(to top, $cx-button-disabled-top 0, $cx-button-disabled-bottom 100%);
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    // box-shadow: none;
+    color: $cx-grey-dark;
+    border: 0;
+    text-shadow: none;
+    &:focus, &:hover { text-decoration: none; }
+
+    &.theme-red { background: linear-gradient(to top, $cx-button-disabled-top 0, $cx-button-disabled-bottom 100%); }
+  }
+}
+
+@mixin button-secondary {
+  @include border-radius(2px);
+  @include themes(cathaypacific) {
+    color: $cx-blue-link;
+    
+    &:focus,
+    &:hover {
+      text-decoration: underline;
+    }
+
+    &:disabled, &.disabled {
+      cursor: default;
+      background-color: $cx-grey-cool;
+      background: linear-gradient(to top, $cx-button-disabled-top 0, $cx-button-disabled-bottom 100%);
+      -webkit-border-radius: 2px;
+      -moz-border-radius: 2px;
+      border-radius: 2px;
+      // box-shadow: none;
+      color: $cx-grey-dark;
+      border: 0;
+      text-shadow: none;
+      &:focus, &:hover { text-decoration: none; }
+    }
+    &.small { font-size: px2rem(12); padding: px2rem(5) px2rem(20); min-height: px2rem(25); min-width: 0; }
+
+    &.inverted {
+      &:not(:disabled) {
+        &:hover { text-decoration: none; background-color: $cx-green-warm; color: $cx-white; border-color: $cx-white; }
+      }
+    }
+  }
+  border: 1px solid $cx-blue-link; background-color: transparent;
+}

@@ -1,0 +1,5 @@
+@import 'common';
+@import 'css3';
+@include keyframe(orbit) {
+  100% { @include transform(rotate(360deg)); }
+}

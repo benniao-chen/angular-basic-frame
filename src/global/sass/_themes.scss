@@ -1,0 +1,7 @@
+@mixin themes($type) {
+
+  @if $type == $theme {
+    @content;
+  }
+
+}
