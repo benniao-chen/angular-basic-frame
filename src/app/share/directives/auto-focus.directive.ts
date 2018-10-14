@@ -1,36 +1,32 @@
-import { Directive, ElementRef, OnInit, HostListener } from '@angular/core';
+import { Directive, ElementRef, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Directive({
   selector: '[benniaoAutoFocus]'
 })
 export class AutoFocusDirective implements OnInit{
 
+  @Input() 
+  set benniaoAutoFocus(flag: boolean) {
+    if(flag) {
+      this.element.focus();
+      setTimeout(() => {
+        this.benniaoAutoFocusChange.emit(false);
+      }, 0);
+    }
+  }
+  
+  @Output() benniaoAutoFocusChange: EventEmitter<boolean> = new EventEmitter();
+
   element: HTMLElement;
 
   constructor(
     private elementRef: ElementRef,
   ) {
-
+    this.element = this.elementRef.nativeElement;
   }
 
   ngOnInit() {
-    this.element = this.elementRef.nativeElement;
-    this.element.focus();
-  }
-
-  @HostListener('click', ['$event.target'])
-  onclick(element) {
-    console.log('click', element);
-  }
-
-  @HostListener('keypress', ['$event'])
-  onkeypress(event) {
-    let _key = parseInt(event.key);
-    let element = event.target;
-    if(isNaN(_key)) {
-      element.value = element.value;
-      return false;
-    }
+    
   }
 
 }

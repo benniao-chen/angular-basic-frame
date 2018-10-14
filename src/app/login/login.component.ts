@@ -8,6 +8,11 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
+  userName: string = "";
+  passWord: string = "";
+  userNameInput: boolean = true;
+  passWordInput: boolean = false;
+
   constructor(
     private router: Router
   ) { }
@@ -17,6 +22,13 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
+    if(!this.userName) {
+      this.userNameInput = true;
+      return;
+    }else if(!this.passWord) {
+      this.passWordInput = true;
+      return;
+    }
     this.router.navigateByUrl('Home');
   }
 

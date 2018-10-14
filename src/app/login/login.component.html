@@ -1,6 +1,14 @@
-<p>
-  login works!
-</p>
 
-
-<button (click)='login()'>Login</button>
+<div class="container">
+  <div class="row form-group">
+      <label for="userName">Username</label>
+      <input id="userName" type="text" class="form-control" placeholder="Please input username"
+        [(ngModel)]='userName' [(benniaoAutoFocus)]='userNameInput'>    
+  </div>
+  <div class="row form-group">
+    <label for="passWord">Password</label>
+    <input id="passWord" type="text" class="form-control" placeholder="Please input password"
+      [(ngModel)]='passWord' [(benniaoAutoFocus)]='passWordInput'>
+  </div>
+  <button (click)='login()' type="button" class="btn btn-primary">Login</button>
+</div>
