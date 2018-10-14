@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { GetBlobService } from '../share/services/get-blob.service';
 
 @Component({
   selector: 'benniao-login',
@@ -14,7 +15,8 @@ export class LoginComponent implements OnInit {
   passWordInput: boolean = false;
 
   constructor(
-    private router: Router
+    private router: Router,
+    private getBlobService: GetBlobService,
   ) { }
 
   ngOnInit() {
@@ -30,6 +32,12 @@ export class LoginComponent implements OnInit {
       return;
     }
     this.router.navigateByUrl('Home');
+  }
+
+  download() {
+    this.getBlobService.getBlobData().then((res) => {
+      console.log(res);
+    })
   }
 
 }
