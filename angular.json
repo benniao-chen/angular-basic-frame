@@ -24,7 +24,6 @@
             ],
             "styles": [
               "src/global/styles.css",
-              "src/global/global.scss",
               "node_modules/bootstrap/dist/css/bootstrap.css"
             ],
             "scripts": []
