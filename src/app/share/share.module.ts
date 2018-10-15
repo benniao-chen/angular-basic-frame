@@ -1,8 +1,17 @@
-import { NgModule } from '@angular/core';
+import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+/* Directives */
 import { AutoFocusDirective } from './directives/auto-focus.directive';
-import { CxAgentTableComponent } from './components/cx-agent-table/cx-agent-table.component';
+/* Components */
+import { MultiLanguageComponent } from './components/multi-language/multi-language.component';
+/* Services */
+import { GetBlobService } from './services/get-blob.service';
+/* Interceptors */
+import { RequestInterceptor } from './interceptors/request.interceptor';
+import { ResponseInterceptor } from './interceptors/response.interceptor';
+
 
 @NgModule({
   imports: [
@@ -12,14 +21,27 @@ import { CxAgentTableComponent } from './components/cx-agent-table/cx-agent-tabl
   ],
   declarations: [
     AutoFocusDirective,
-    CxAgentTableComponent,
+    MultiLanguageComponent,
   ],
   exports: [
-    CommonModule,
+    AutoFocusDirective,
     FormsModule,
     ReactiveFormsModule,
-    AutoFocusDirective,
-    CxAgentTableComponent,
+    MultiLanguageComponent,
   ]
 })
-export class ShareModule { }
+
+export class ShareModule {
+
+    static forRoot(): ModuleWithProviders {
+        return {
+            ngModule: ShareModule,
+            providers: [
+              GetBlobService,
+              { provide: HTTP_INTERCEPTORS, useClass: RequestInterceptor, multi: true },
+              { provide: HTTP_INTERCEPTORS, useClass: ResponseInterceptor, multi: true },
+
+            ],
+        }
+    }
+}
